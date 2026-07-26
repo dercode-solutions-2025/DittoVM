@@ -73,7 +73,7 @@ class DittoTM {
 				temp += static_cast<char>(TM[PTR]);
 			}
 			std::cout << temp;
-			std::cin >> input;
+			std::getline(std::cin, input);
 			for(char x : input) {
 				TM[PTR] = x;
 				right();
