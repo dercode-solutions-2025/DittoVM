@@ -8,3 +8,17 @@ I also gave DittoVM 100,000 cells for HUGE calculations.
 DittoVM also handles adding strings (like adding an input string to a chunk of the VM's memory) and reading them.
 
 DittoVM is essentially Brainfuck but with better commands and more commands, like out_lit which outputs the literal value of a cell, which differs from out (which outputs the ASCII value of a cell)
+
+# Roadmap
+v0.1 - First upload to GitHub. Officially turing-complete.
+
+v0.2 - Replaced "std::cin >> input;" with "std::getline(std::cin, input);" to handle spaces in input.
+
+# Future updates
+Since DittoVM is already turing-complete, I might add some of these in the future:
+
+- Basic arithmetic commands
+
+- FUNCTIONS!!!
+
+- And more quality of life updates!
