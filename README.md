@@ -26,6 +26,16 @@ v0.3 - Added 4 new arithmetic commands, those being:
 
 v0.4 - Added a "rand" command for random number generation.
 
+v0.4 - Added comments, like so:
+
+<begin>
+
+out_lit
+
+The last line does nothing!
+
+<end>
+
 
 # Future updates
 Since DittoVM is already turing-complete, I might add some of these in the future:
