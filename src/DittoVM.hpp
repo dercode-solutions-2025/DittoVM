@@ -45,14 +45,14 @@ right - Moves head to the right.
 clear - Sets current cell to 0.
 
 add - Adds the last two cells to the left together and sets the current cell to the result.
-
 sub - Subtracts the last two cells to the left together and sets the current cell to the result.
-
 mult - Multiplies the last two cells to the left together and sets the current cell to the result.
-
 div - Divides the last two cells to the left together and sets the current cell to the result.
-
 rand - Generates a random number, with the cell to the left being the minimum, and the cell two cells back being the maximum, then setting the current cell to the result.
+
+<begin> - Begin a multi-line comment.
+
+<end> - Ends a multi-line comment.
 
 Okay, now that we have instructions ready, let's get started.
 */
@@ -104,6 +104,11 @@ class DittoTM {
 	   std::srand(std::time(NULL));
 	   TM[PTR] = (std::rand() % TM[PTR - 1]) + TM[PTR - 2];
     }
+    void comments() {
+    	while (script[PC] != "<end>") {
+    		PC++;
+    	}
+    }
 	inline void exec() {
 		while (PC < script.size()) {
 			if(script[PC] == "inc") {
@@ -149,6 +154,9 @@ class DittoTM {
 				PC++;
 			} else if(script[PC] == "rand") {
 				rand();
+				PC++;
+			} else if(script[PC] == "<begin>") {
+				comments();
 				PC++;
 			}
 		}
