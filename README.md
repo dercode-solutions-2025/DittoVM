@@ -14,6 +14,16 @@ v0.1 - First upload to GitHub. Officially turing-complete.
 
 v0.2 - Replaced "std::cin >> input;" with "std::getline(std::cin, input);" to handle spaces in input.
 
+v0.3 - Added 4 new arithmetic commands, those being:
+
+- add
+
+- sub
+
+- mult
+
+- div
+
 # Future updates
 Since DittoVM is already turing-complete, I might add some of these in the future:
 
