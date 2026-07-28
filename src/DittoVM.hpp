@@ -44,6 +44,11 @@ right - Moves head to the right.
 
 clear - Sets current cell to 0.
 
+add - Adds the last two cells to the left together and sets the current cell to the result.
+sub - Subtracts the last two cells to the left together and sets the current cell to the result.
+mult - Multiplies the last two cells to the left together and sets the current cell to the result.
+div - Divides the last two cells to the left together and sets the current cell to the result.
+
 Okay, now that we have instructions ready, let's get started.
 */
 #include <iostream>
@@ -85,6 +90,10 @@ class DittoTM {
 			while(script[PC] != "jmp_en") { PC++; }
 		}
 	}
+	void add() { TM[PTR] = TM[PTR - 1] + TM[PTR - 2]; }
+	void sub() { TM[PTR] = TM[PTR - 1] - TM[PTR - 2]; }
+	void mult() { TM[PTR] = TM[PTR - 1] * TM[PTR - 2]; }
+	void div() { TM[PTR] = TM[PTR - 1] / TM[PTR - 2]; }
 	inline void exec() {
 		while (PC < script.size()) {
 			if(script[PC] == "inc") {
@@ -115,6 +124,18 @@ class DittoTM {
 				PC++;
 			}else if(script[PC] == "clear") {
 				clear();
+				PC++;
+			} else if(script[PC] == "add") {
+				add();
+				PC++;
+			} else if(script[PC] == "sub") {
+				sub();
+				PC++;
+			} else if(script[PC] == "mult") {
+				mult();
+				PC++;
+			} else if(script[PC] == "div") {
+				div();
 				PC++;
 			}
 		}
