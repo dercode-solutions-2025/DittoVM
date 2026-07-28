@@ -28,13 +28,13 @@ v0.4 - Added a "rand" command for random number generation.
 
 v0.4 - Added comments, like so:
 
-\<begin>
+\<begin\>
 
 out_lit
 
 The last line does nothing!
 
-\<end>
+\<end\>
 
 
 # Future updates
