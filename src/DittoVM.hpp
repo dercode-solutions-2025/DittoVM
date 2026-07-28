@@ -45,15 +45,21 @@ right - Moves head to the right.
 clear - Sets current cell to 0.
 
 add - Adds the last two cells to the left together and sets the current cell to the result.
+
 sub - Subtracts the last two cells to the left together and sets the current cell to the result.
+
 mult - Multiplies the last two cells to the left together and sets the current cell to the result.
+
 div - Divides the last two cells to the left together and sets the current cell to the result.
+
+rand - Generates a random number, with the cell to the left being the minimum, and the cell two cells back being the maximum, then setting the current cell to the result.
 
 Okay, now that we have instructions ready, let's get started.
 */
 #include <iostream>
 #include <string>
 #include <vector>
+#include <ctime>
 #ifndef DITTO_VM
 #define DITTO_VM
 
@@ -94,6 +100,10 @@ class DittoTM {
 	void sub() { TM[PTR] = TM[PTR - 1] - TM[PTR - 2]; }
 	void mult() { TM[PTR] = TM[PTR - 1] * TM[PTR - 2]; }
 	void div() { TM[PTR] = TM[PTR - 1] / TM[PTR - 2]; }
+	void rand() {
+	   std::srand(std::time(NULL));
+	   TM[PTR] = (std::rand() % TM[PTR - 1]) + TM[PTR - 2];
+    }
 	inline void exec() {
 		while (PC < script.size()) {
 			if(script[PC] == "inc") {
@@ -136,6 +146,9 @@ class DittoTM {
 				PC++;
 			} else if(script[PC] == "div") {
 				div();
+				PC++;
+			} else if(script[PC] == "rand") {
+				rand();
 				PC++;
 			}
 		}
