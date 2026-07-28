@@ -163,7 +163,6 @@ class DittoTM {
 				PC++;
 			} else if(script[PC] == "goto") {
 				goto_();
-				PC++;
 			}
 		}
 	}
