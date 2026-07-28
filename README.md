@@ -24,10 +24,13 @@ v0.3 - Added 4 new arithmetic commands, those being:
 
 - div
 
+v0.4 - Added a "rand" command for random number generation.
+
+
 # Future updates
 Since DittoVM is already turing-complete, I might add some of these in the future:
 
-- Basic arithmetic commands
+- Comments
 
 - FUNCTIONS!!!
 
