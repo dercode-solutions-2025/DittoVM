@@ -26,7 +26,7 @@ v0.3 - Added 4 new arithmetic commands, those being:
 
 v0.4 - Added a "rand" command for random number generation.
 
-v0.4 - Added comments, like so:
+v0.5 - Added comments, like so:
 
 \<begin\>
 
