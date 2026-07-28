@@ -54,6 +54,8 @@ rand - Generates a random number, with the cell to the left being the minimum, a
 
 <end> - Ends a multi-line comment.
 
+goto - Goes directly to a line, defined by the value held by the current cell.
+
 Okay, now that we have instructions ready, let's get started.
 */
 #include <iostream>
@@ -109,6 +111,7 @@ class DittoTM {
     		PC++;
     	}
     }
+    void goto_() { PC = TM[PTR]; }
 	inline void exec() {
 		while (PC < script.size()) {
 			if(script[PC] == "inc") {
@@ -157,6 +160,9 @@ class DittoTM {
 				PC++;
 			} else if(script[PC] == "<begin>") {
 				comments();
+				PC++;
+			} else if(script[PC] == "goto") {
+				goto_();
 				PC++;
 			}
 		}
