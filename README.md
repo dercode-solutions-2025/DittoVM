@@ -47,6 +47,6 @@ Since DittoVM is already turing-complete, I might add some of these in the futur
 
 - Error messages!
 
-- FUNCTIONS!!!
+- Macros!
 
 - And more quality of life updates!
