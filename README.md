@@ -40,6 +40,8 @@ v0.6 - Added a goto command. It goes to a specific line based on the value of th
 
 v0.7 - Fixed a MAJOR bug with goto.
 
+v0.8 - Added a sleep command. It sleeps (in milliseconds) based on the value of the current cell.
+
 # Future updates
 Since DittoVM is already turing-complete, I might add some of these in the future:
 
