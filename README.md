@@ -42,6 +42,8 @@ v0.7 - Fixed a MAJOR bug with goto.
 
 v0.8 - Added a sleep command. It sleeps (in milliseconds) based on the value of the current cell.
 
+v0.9 - Added an exit command. It exits with an error code, based off the current cell.
+
 # Future updates
 Since DittoVM is already turing-complete, I might add some of these in the future:
 
