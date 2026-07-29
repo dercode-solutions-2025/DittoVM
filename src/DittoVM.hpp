@@ -56,6 +56,8 @@ rand - Generates a random number, with the cell to the left being the minimum, a
 
 goto - Goes directly to a line, defined by the value held by the current cell.
 
+exit - Exits the program with an error code, based off the current cell.
+
 Okay, now that we have instructions ready, let's get started.
 */
 #include <iostream>
@@ -90,7 +92,7 @@ class DittoTM {
 			std::cout << temp;
 			std::getline(std::cin, input);
 			for(char x : input) {
-				TM[PTR] = x;
+				TM[PTR] = static_cast<int>(x);
 				right();
 			}
 			clear();
@@ -115,6 +117,7 @@ class DittoTM {
     }
     void goto_() { PC = TM[PTR]; }
     void sleep() { std::this_thread::sleep_for(std::chrono::milliseconds(TM[PTR])); }
+    void exit() { std::exit(TM[PTR]); }
 	inline void exec() {
 		while (PC < script.size()) {
 			if(script[PC] == "inc") {
@@ -168,6 +171,9 @@ class DittoTM {
 				goto_();
 			} else if(script[PC] == "sleep") {
 				sleep();
+				PC++;
+			} else if(script[PC] == "exit") {
+				exit();
 				PC++;
 			}
 		}
