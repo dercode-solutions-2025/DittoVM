@@ -62,6 +62,8 @@ Okay, now that we have instructions ready, let's get started.
 #include <string>
 #include <vector>
 #include <ctime>
+#include <chrono>
+#include <thread>
 #ifndef DITTO_VM
 #define DITTO_VM
 
@@ -112,6 +114,7 @@ class DittoTM {
     	}
     }
     void goto_() { PC = TM[PTR]; }
+    void sleep() { std::this_thread::sleep_for(std::chrono::milliseconds(TM[PTR])); }
 	inline void exec() {
 		while (PC < script.size()) {
 			if(script[PC] == "inc") {
@@ -163,6 +166,9 @@ class DittoTM {
 				PC++;
 			} else if(script[PC] == "goto") {
 				goto_();
+			} else if(script[PC] == "sleep") {
+				sleep();
+				PC++;
 			}
 		}
 	}
