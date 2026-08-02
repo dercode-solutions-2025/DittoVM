@@ -1,17 +1,17 @@
 /*
 
-DittoVM - One VM to rule them all
+MindScript - One VM to rule them all
 
 --- About ---
 
-We gave DittoVM 100,000 cells for any calculation, essentially infinite memory. Go wild!
+We gave MindScript 100,000 cells for any calculation, essentially infinite memory. Go wild!
 
 --- Example Usage ---
 
-#include "DittoVM.hpp"
+#include "mindscript.hpp"
 
 int main() {
-	DittoTM VM;
+	MindTM VM;
 	// Printing "123"
 	VM.script = {
 		"inc",
@@ -66,10 +66,10 @@ Okay, now that we have instructions ready, let's get started.
 #include <ctime>
 #include <chrono>
 #include <thread>
-#ifndef DITTO_VM
-#define DITTO_VM
+#ifndef MINDSCRIPT
+#define MINDSCRIPT
 
-class DittoTM {
+class MindScript {
 	public:
 		std::vector<int> TM = std::vector(100000, 0);
 		int PTR = 0;
