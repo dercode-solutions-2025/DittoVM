@@ -1,13 +1,13 @@
-# DittoVM
+# MindScript
 A small, Brainfuck-like language written in C++.
 # About
-I designed DittoVM for compiler devs that didn't want to write a VM themselves.
+We designed MindScript for compiler devs that didn't want to write a VM themselves.
 
-I also gave DittoVM 100,000 cells for HUGE calculations.
+We also gave MindScript 100,000 cells for HUGE calculations.
 
-DittoVM also handles adding strings (like adding an input string to a chunk of the VM's memory) and reading them.
+MindScript also handles adding strings (like adding an input string to a chunk of the VM's memory) and reading them.
 
-DittoVM is essentially Brainfuck but with better commands and more commands, like out_lit which outputs the literal value of a cell, which differs from out (which outputs the ASCII value of a cell)
+MindScript is essentially Brainfuck but with better commands and more commands, like out_lit which outputs the literal value of a cell, which differs from out (which outputs the ASCII value of a cell)
 
 # Roadmap
 v0.1 - First upload to GitHub. Officially turing-complete.
@@ -45,7 +45,7 @@ v0.8 - Added a sleep command. It sleeps (in milliseconds) based on the value of 
 v0.9 - Added an exit command. It exits with an error code, based off the current cell.
 
 # Future updates
-Since DittoVM is already turing-complete, I might add some of these in the future:
+Since MindScript is already turing-complete, I might add some of these in the future:
 
 - Error messages!
 
