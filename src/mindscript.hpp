@@ -71,7 +71,7 @@ Okay, now that we have instructions ready, let's get started.
 
 class MindScript {
 	public:
-		std::vector<int> TM = std::vector(100000, 0);
+		std::vector<int> MindTM = std::vector(100000, 0);
 		int PTR = 0;
 		int PC = 0;
 		std::vector<std::string> script;
