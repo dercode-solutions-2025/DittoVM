@@ -66,14 +66,15 @@ Okay, now that we have instructions ready, let's get started.
 #include <ctime>
 #include <chrono>
 #include <thread>
-#ifndef MINDSCRIPT
-#define MINDSCRIPT
+#ifndef MINDSCRIPT_HPP
+#define MINDSCRIPT_HPP
 
 class MindScript {
 	public:
-		std::vector<int> MindTM = std::vector(100000, 0);
+		std::vector<int> TM = std::vector(100000, 0);
 		int PTR = 0;
 		int PC = 0;
+		int temp_marker = 0;
 		std::vector<std::string> script;
 		void inc() { TM[PTR]++; }
 		void dec() { TM[PTR]--; }
@@ -118,6 +119,9 @@ class MindScript {
     void goto_() { PC = TM[PTR]; }
     void sleep() { std::this_thread::sleep_for(std::chrono::milliseconds(TM[PTR])); }
     void exit() { std::exit(TM[PTR]); }
+    void marker_st() { temp_marker = TM[PTR]; }
+    void marker_jmp() { PC = temp_marker; }
+    void reset() { TM = std::vector(100000, 0); }
 	inline void exec() {
 		while (PC < script.size()) {
 			if(script[PC] == "inc") {
@@ -174,6 +178,12 @@ class MindScript {
 				PC++;
 			} else if(script[PC] == "exit") {
 				exit();
+				PC++;
+			} else if(script[PC] == "marker_st") {
+				marker_st();
+				PC++;
+			} else if(script[PC] == "marker_jmp") {
+				marker_jmp();
 				PC++;
 			}
 		}
