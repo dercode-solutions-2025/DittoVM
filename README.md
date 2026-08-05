@@ -44,6 +44,8 @@ v0.8 - Added a sleep command. It sleeps (in milliseconds) based on the value of 
 
 v0.9 - Added an exit command. It exits with an error code, based off the current cell.
 
+v1.0 - Added marker_st and marker_jmp commands. marker_st starts a line marker for later use and marker_jmp jumps to the line saved by the marker.
+
 # Future updates
 Since MindScript is already turing-complete, I might add some of these in the future:
 
